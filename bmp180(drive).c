@@ -73,21 +73,6 @@ static struct i2c_driver bmp180_driver = {
     .id_table = bmp180_id,
 };
 
-static int __init bmp180_init(void)
-{
-    printk(KERN_INFO "Initializing bmp180 driver\n");
-    return i2c_add_driver(&bmp180_driver);
-}
-
-static void __exit bmp180_exit(void)
-{
-    printk(KERN_INFO "Exiting bmp180 driver\n");
-    i2c_del_driver(&bmp180_driver);
-}
-
-module_init(mpu6050_init);
-module_exit(mpu6050_exit);
-
 module_i2c_driver(bmp180_driver);
 
 MODULE_LICENSE("GPL");
